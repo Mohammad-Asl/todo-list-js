@@ -2,37 +2,34 @@ let $ = document;
 let inputElem = $.querySelector("input");
 let addTodoForm = $.querySelector(".add");
 let todoUlElem = $.querySelector(".todos");
-let removeElem = $.querySelector('.delete')
 
 function addNewTodo(newTodoValue) {
-//   let newTodoLi = $.createElement("li");
-//   newTodoLi.className =
-//     "list-group-item d-flex justify-content-between align-items-center";
+   let newTodoLi = $.createElement("li");
+   newTodoLi.className ="list-group-item d-flex justify-content-between align-items-center";
 
-//   let newTodoTitleSpan = $.createElement("span");
-//   newTodoTitleSpan.innerHTML = newTodoValue;
+   let newTodoTitleSpan = $.createElement("span");
+   newTodoTitleSpan.innerHTML = newTodoValue;
 
-//   let newTodoTrash = $.createElement("i");
-//   newTodoTrash.className = "fa fa-trash-o delete";
+   let newTodoTrash = $.createElement("i");
+   newTodoTrash.className = "fa fa-trash-o delete";
 
-//   newTodoTrash.addEventListener("click", function (event) {
-//     event.target.parentElement.remove();
-//   });
+   newTodoTrash.addEventListener("click", function (event) {
+     event.target.parentElement.remove();
+   });
 
-//   newTodoLi.append(newTodoTitleSpan, newTodoTrash);
+   newTodoLi.append(newTodoTitleSpan, newTodoTrash);
 
-//   todoUlElem.append(newTodoLi);
+   todoUlElem.append(newTodoLi);
 
-  todoUlElem.insertAdjacentHTML('beforeend' , `
+  // todoUlElem.insertAdjacentHTML('beforeend' , `
   
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-      <span>${newTodoValue}</span>
-      <i class="fa fa-trash-o delete"></i>
-  </li>
+  // <li class="list-group-item d-flex justify-content-between align-items-center">
+  //     <span>${newTodoValue}</span>
+  //     <i class="fa fa-trash-o delete"></i>
+  // </li>
   
-`)
+//`)
 
-//    console.log(newTodoLi);
 }
 
 addTodoForm.addEventListener("submit", function (event) {
@@ -50,7 +47,3 @@ inputElem.addEventListener("keydown", function (event) {
     }
   }
 });
-
-removeElem.addEventListener("click" , function(){
-       todoUlElem.remove()
-  })
